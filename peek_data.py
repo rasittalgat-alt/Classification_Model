@@ -1,7 +1,7 @@
 import pandas as pd
 from pathlib import Path
 
-# полный путь к CSV (как ты писал ранее)
+# полный путь к CSV
 csv_path = Path(r"C:\Users\talgat.rashit\Desktop\AML Тестовое задание\esf_fulll_202511211949.csv")
 
 print("Файл существует?", csv_path.exists())
