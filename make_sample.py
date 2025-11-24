@@ -1,13 +1,13 @@
 import pandas as pd
 from pathlib import Path
 
-# исходный большой файл
+# исходный большой файл. Указываем путь к файлу
 SRC_PATH = Path(r"C:\Users\talgat.rashit\Desktop\AML Тестовое задание\esf_fulll_202511211949.csv")
 
 # выходной облегченный файл
 DST_PATH = Path("esf_sample_200k.csv")
 
-N_ROWS = 200_000  # сколько строк хотим в сэмпле
+N_ROWS = 200_000  # строк хотим в сэмпле
 CHUNK_SIZE = 50_000  # размер кусочка при чтении
 
 def main():
@@ -35,7 +35,7 @@ def main():
     for i, chunk in enumerate(reader, start=1):
         print(f"Обрабатываем чанк {i}, размер {len(chunk)}")
 
-        # Если уже набрали достаточно строк — останавливаемся
+        # Если уже набрали достаточно строк - останавливаемся
         rows_left = N_ROWS - total_kept
         if rows_left <= 0:
             break
