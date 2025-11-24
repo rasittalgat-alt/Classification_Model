@@ -28,7 +28,7 @@ def main():
     print("Строк с размеченной категорией:", df.shape[0])
 
     if df.shape[0] < 100:
-        print("❌ Слишком мало размеченных данных (<100). Разметь ещё немного и повтори.")
+        print("❌ Слишком мало размеченных данных (<100). Размечаем ещё немного и повторяем.")
         return
 
     df["DESCRIPTION_CLEAN"] = df["DESCRIPTION"].astype(str).map(clean_text)
