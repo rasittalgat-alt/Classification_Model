@@ -1,7 +1,7 @@
 import pandas as pd
 import os
 
-# Имя файла с выборкой (лежит в той же папке, где и этот скрипт)
+# Имя файла с выборкой
 INPUT_FILE = "esf_label_sample_5000.csv"
 
 
@@ -181,7 +181,7 @@ def categorize_description(desc: str) -> str:
         "возмещен", "пересылк", "укладк", "проживан", "зарядка", "перезарядка", "установка", "хранение"
     ]
 
-    # ---------- считаем «очки» по категориям ----------
+    # ---------- считаем очки по категориям ----------
 
     best_category = None
     best_score = 0
@@ -211,7 +211,7 @@ def main():
         return
 
     print(f"Читаем файл: {INPUT_FILE}")
-    # Если вдруг будут проблемы с кодировкой, попробуй encoding='cp1251'
+    # Если вдруг будут проблемы с кодировкой, то можно попробовать encoding='cp1251'
     df = pd.read_csv(INPUT_FILE, encoding="utf-8")
 
     if "DESCRIPTION" not in df.columns:
